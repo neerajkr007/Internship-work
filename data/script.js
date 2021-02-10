@@ -44,6 +44,7 @@ function optionchosen(option, n){
                 else{
                     document.getElementById("modalBody").innerHTML = "<h5>Congratulations, Quiz completed !!!</h5>"+ "<h4>Your performance was<strong> above average</strong></h4>";
                 }
+                document.getElementById("cancel").innerHTML = "Close";
                 $('#Modal1').modal('toggle')
             }
             return 1;
@@ -59,7 +60,7 @@ function optionchosen(option, n){
         document.getElementById("modalBody").innerHTML = "<h4>Congratulations, Quiz "+quizNumber+" completed. continue to next quiz</h4>";
         document.getElementById("cancel").innerHTML = "Next";
         document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
         $('#Modal1').modal('toggle')
 
     }
@@ -74,6 +75,7 @@ function optionchosen(option, n){
         else{
             document.getElementById("modalBody").innerHTML = "<h5>Congratulations, Quiz completed !!!</h5>"+ "<h4>Your performance was<strong> above average</strong></h4>";
         }
+        document.getElementById("cancel").innerHTML = "Close";
         $('#Modal1').modal('toggle')
     }
 }
