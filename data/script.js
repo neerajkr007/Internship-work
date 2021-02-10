@@ -26,16 +26,25 @@ function optionchosen(option, n){
             markedCorrect++;
             if(marked%10 == 0 && quizNumber != 3){
                 quizNumber++;
-                document.getElementById("modalBody").innerHTML = "Congratulations, Quiz "+quizNumber+" completed. continue to next quiz";
-                //document.getElementById("quizButton"+quizNumber).disabled = true;
+                document.getElementById("modalBody").innerHTML = "<h4>Congratulations, Quiz "+quizNumber+" completed. continue to next quiz</h4>";
+                document.getElementById("cancel").innerHTML = "Next";
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
                 $('#Modal1').modal('toggle')
-                setTimeout(()=>{$('#Modal1').modal('toggle')},1000)
 
             }
             if(marked == 40){
-                document.getElementById("modalBody").innerHTML = "Congratulations, Quiz completed !!! "+markedCorrect+" correct";
+                if(markedCorrect <= 15){
+                    document.getElementById("modalBody").innerHTML = "<h5>Congratulations, Quiz completed !!!</h5>"+ "<h4>Your performance was<strong> below average</strong></h4>";
+                }
+                else if(16 <= markedCorrect <= 25)
+                {
+                    document.getElementById("modalBody").innerHTML = "<h5>Congratulations, Quiz completed !!!</h5>"+ "<h4>Your performance was<strong> average</strong></h4>";
+                }
+                else{
+                    document.getElementById("modalBody").innerHTML = "<h5>Congratulations, Quiz completed !!!</h5>"+ "<h4>Your performance was<strong> above average</strong></h4>";
+                }
                 $('#Modal1').modal('toggle')
-                setTimeout(()=>{$('#Modal1').modal('toggle')},2000)
             }
             return 1;
         }
@@ -45,18 +54,27 @@ function optionchosen(option, n){
         document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].children[j].classList.remove("hov");
     }
     document.getElementById("q"+n+"q"+option[1]).style.backgroundColor = "#ee9090";
-    if(marked%10 == 0){
+    if(marked%10 == 0 && quizNumber != 3){
         quizNumber++;
-        document.getElementById("modalBody").innerHTML = "Congratulations, Quiz "+quizNumber+" completed. continue to next quiz";
-        //document.getElementById("quizButton"+quizNumber).disabled = true;
+        document.getElementById("modalBody").innerHTML = "<h4>Congratulations, Quiz "+quizNumber+" completed. continue to next quiz</h4>";
+        document.getElementById("cancel").innerHTML = "Next";
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
         $('#Modal1').modal('toggle')
-        setTimeout(()=>{$('#Modal1').modal('toggle')},1000)
 
     }
     if(marked == 40){
-        document.getElementById("modalBody").innerHTML = "Congratulations, Quiz completed !!! "+markedCorrect+" correct";
+        if(markedCorrect <= 15){
+            document.getElementById("modalBody").innerHTML = "<h5>Congratulations, Quiz completed !!!</h5>"+ "<h4>Your performance was<strong> below average</strong></h4>";
+        }
+        else if(16 <= markedCorrect <= 25)
+        {
+            document.getElementById("modalBody").innerHTML = "<h5>Congratulations, Quiz completed !!!</h5>"+ "<h4>Your performance was<strong> average</strong></h4>";
+        }
+        else{
+            document.getElementById("modalBody").innerHTML = "<h5>Congratulations, Quiz completed !!!</h5>"+ "<h4>Your performance was<strong> above average</strong></h4>";
+        }
         $('#Modal1').modal('toggle')
-        setTimeout(()=>{$('#Modal1').modal('toggle')},2000)
     }
 }
 
