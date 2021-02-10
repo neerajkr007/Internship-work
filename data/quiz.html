@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="content" style="min-height: 81vh;">
-        <nav class="navbar navbar-expand-md navbar-light mb-10" style='background-color: #0099CC;font-family: "Lucida Console", monospace;'>
+        <nav class="navbar navbar-expand-md navbar-light mb-10" style='background-color: #0099CC;'>
             <a class="navbar-brand text-white" href="../index.html">Home</a>
             <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -28,36 +28,30 @@
                     <a class="nav-link text-white" href="./quiz.html">Quiz</a>
                 </li>
               </ul>
-            <!---<ul class="navbar-nav narbar-right">
-              <li class="nav-item active">
-                <a class="nav-link text-white" href="notice.html">About</a>
-              </li>
-            </ul>--->
-              
             </div>
         </nav>
         <div class="container mt-5">
             <h2 class="display-4">A few short quiz for some fun</h2>
-            <button class="btn btn-success mt-5 mr-5 mb-5" onClick="startQuiz(1)">QUIZ 1</button>
-            <button class="btn btn-success mt-5 mr-5 mb-5" onClick="startQuiz(2)">QUIZ 2</button>
-            <button class="btn btn-success mt-5 mr-5 mb-5" onClick="startQuiz(3)">QUIZ 3</button>
-            <button class="btn btn-success mt-5 mb-5" onClick="startQuiz(4)">QUIZ 4</button>
+            <button id="quizButton1" class="btn btn-success mt-5 mr-5 mb-5" onClick="startQuiz(1)">QUIZ 1</button>
+            <button id="quizButton2" class="btn btn-success mt-5 mr-5 mb-5" onClick="startQuiz(2)">QUIZ 2</button>
+            <button id="quizButton3" class="btn btn-success mt-5 mr-5 mb-5" onClick="startQuiz(3)">QUIZ 3</button>
+            <button id="quizButton4" class="btn btn-success mt-5 mb-5" onClick="startQuiz(4)">QUIZ 4</button>
             <div id="quiz1" class="mt-5">
                 <ul class="list-group">
                     <li id="q1q1" class="list-group-item" style="max-width: 80vw;">
                         1. _________ gamut of managing and creating of money through Banking, Investment, Borrowing with the help of Financial Markets that make up financial systems, as well as the study of those financial instruments.
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q1o1', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q1o1', 1)">
                                     <p>Finance</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q1o2', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q1o2', 1)">
                                     <p>Investment</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q1o3', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q1o3', 1)">
                                     <p>Saving</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q1o4', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q1o4', 1)">
                                     <p>Banking</p>
                                 </li>
                             </ul>
@@ -67,16 +61,16 @@
                         2. Which one is not the type of Finance ?
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q2o1', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q2o1', 1)">
                                     <p>Personal Finance</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q2o2', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q2o2', 1)">
                                     <p>Public Finance</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q2o3', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q2o3', 1)">
                                     <p>Corporate Finance</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q2o4', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q2o4', 1)">
                                     <p>Investment Finance</p>
                                 </li>
                             </ul>
@@ -86,16 +80,16 @@
                         3. _______ is related to managing funds of individuals.
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q3o1', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q3o1', 1)">
                                     <p>Public Finance</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q3o2', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q3o2', 1)">
                                     <p>Personal Finance</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q3o3', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q3o3', 1)">
                                     <p>Corporate Finance</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q3o4', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q3o4', 1)">
                                     <p>Investment Finance</p>
                                 </li>
                             </ul>
@@ -105,16 +99,16 @@
                         4. ______ is the study of Government income and expenditure activities and recognize when, how and why Government should intervene in the economy.
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q4o1', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q4o1', 1)">
                                     <p>Personal Finance</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q4o2', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q4o2', 1)">
                                     <p>Public Finance</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q4o3', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q4o3', 1)">
                                     <p>Corporate Finance</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q4o4', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q4o4', 1)">
                                     <p>Investment Finance</p>
                                 </li>
                             </ul>
@@ -124,16 +118,16 @@
                         5. _____Deals with how corporations deal with funding sources, capital structuring, and investment decisions.
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q5o1', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q5o1', 1)">
                                     <p>Public Finance</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q5o2', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q5o2', 1)">
                                     <p>Personal Finance</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q5o3', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q5o3', 1)">
                                     <p>Corporate Finance</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q5o4', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q5o4', 1)">
                                     <p>Financial  Analysis</p>
                                 </li>
                             </ul>
@@ -143,16 +137,16 @@
                         6. Which one is not the source of long term finance for corporates ?
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q6o1', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q6o1', 1)">
                                     <p>Equity share capital</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q6o2', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q6o2', 1)">
                                     <p>Preference share capital                                    </p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q6o3', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q6o3', 1)">
                                     <p>Debentures                                    </p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q6o4', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q6o4', 1)">
                                     <p>Line of credit</p>
                                 </li>
                             </ul>
@@ -162,16 +156,16 @@
                         7. Which one is not the source of short term finance for corporates ?
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q7o1', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q7o1', 1)">
                                     <p>Line of credit</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q7o2', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q7o2', 1)">
                                     <p>Trade creditors</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q7o3', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q7o3', 1)">
                                     <p>Bills payables                                    </p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q7o4', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q7o4', 1)">
                                     <p>Bonds</p>
                                 </li>
                             </ul>
@@ -181,16 +175,16 @@
                         8. Which one affects market price of a share ?
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q8o1', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q8o1', 1)">
                                     <p>Investors’ Behavior                                    </p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q8o2', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q8o2', 1)">
                                     <p>News about the company</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q8o3', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q8o3', 1)">
                                     <p>Economic conditions</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q8o4', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q8o4', 1)">
                                     <p>All of the above</p>
                                 </li>
                             </ul>
@@ -200,10 +194,10 @@
                         9. Do financing through issue of debentures or bonds helps to increase Earning per share ?
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q9o1', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q9o1', 1)">
                                     <p>Yes</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q9o2', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q9o2', 1)">
                                     <p>No</p>
                                 </li>
                             </ul>
@@ -213,10 +207,10 @@
                         10. Main objective of trading on equity is The primary effect of this financial strategy is a magnification of fluctuation in earnings before interest and taxes (EBIT) on a company’s EPS.
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q0o1', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q0o1', 1)">
                                     <p>False</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q0o2', 1)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q0o2', 1)">
                                     <p>True</p>
                                 </li>
                             </ul>
@@ -230,16 +224,16 @@
                         1. The use of a Demat account protects one from the following except
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 300px !important;" onclick="optionchosen('q1o1', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 300px !important;" onclick="optionchosen('q1o1', 2)">
                                     <p>Loss on account of mutilation</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 300px !important;" onclick="optionchosen('q1o2', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 300px !important;" onclick="optionchosen('q1o2', 2)">
                                     <p>Loss on account of theft</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 300px !important;" onclick="optionchosen('q1o3', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 300px !important;" onclick="optionchosen('q1o3', 2)">
                                     <p>Loss on account of Fraud</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 300px !important;" onclick="optionchosen('q1o4', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 300px !important;" onclick="optionchosen('q1o4', 2)">
                                     <p>Loss on account of Fire</p>
                                 </li>
                             </ul>
@@ -249,16 +243,16 @@
                         2. Process of converting the physical share certificates into electronic form
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q2o1', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q2o1', 2)">
                                     <p>Dematerialisation</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q2o2', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q2o2', 2)">
                                     <p>Conversion</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q2o3', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q2o3', 2)">
                                     <p>transfer</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q2o4', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q2o4', 2)">
                                     <p>Change against shares</p>
                                 </li>
                             </ul>
@@ -268,16 +262,16 @@
                         3. Account provides the facility of holding shares and securities in an electronic format
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q3o1', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q3o1', 2)">
                                     <p>Pool Account</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q3o2', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q3o2', 2)">
                                     <p>Electronic A/c</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q3o3', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q3o3', 2)">
                                     <p>Demat A/c</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q3o4', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q3o4', 2)">
                                     <p>Bank A/c</p>
                                 </li>
                             </ul>
@@ -287,16 +281,16 @@
                         4. Issue of fresh shares to the general public.
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q4o1', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q4o1', 2)">
                                     <p>General Issue</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q4o2', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q4o2', 2)">
                                     <p>FPO</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q4o3', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q4o3', 2)">
                                     <p>IPO</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q4o4', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q4o4', 2)">
                                     <p>Offer for sale</p>
                                 </li>
                             </ul>
@@ -306,16 +300,16 @@
                         5. IPO means
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q5o1', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q5o1', 2)">
                                     <p>Initial Public Offer</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q5o2', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q5o2', 2)">
                                     <p>Immediate Public Offer</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q5o3', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q5o3', 2)">
                                     <p>Integrated Public Offer</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q5o4', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q5o4', 2)">
                                     <p>International Public Offer</p>
                                 </li>
                             </ul>
@@ -325,16 +319,16 @@
                         6. In _______ analysis we use charts to identify trading signals and price patterns.
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q6o1', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q6o1', 2)">
                                     <p>Fundamental Analysis</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q6o2', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q6o2', 2)">
                                     <p>Technical Analysis</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q6o3', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q6o3', 2)">
                                     <p>Chart Analysis</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q6o4', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q6o4', 2)">
                                     <p>Investment analysis</p>
                                 </li>
                             </ul>
@@ -344,16 +338,16 @@
                         7. _________navigates the gap between intrinsic value and market price.
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q7o1', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q7o1', 2)">
                                     <p>Fundamental Analysis</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q7o2', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q7o2', 2)">
                                     <p>Technical Analysis</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q7o3', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q7o3', 2)">
                                     <p>Chart Analysis</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q7o4', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q7o4', 2)">
                                     <p>Investment analysis</p>
                                 </li>
                             </ul>
@@ -363,16 +357,16 @@
                         8. What does fundamental studies involves ?
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q8o1', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q8o1', 2)">
                                     <p>Studying the books of accounts.</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q8o2', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q8o2', 2)">
                                     <p>Interacting with the key persons</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q8o3', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q8o3', 2)">
                                     <p>Studying the macro economy</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q8o4', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q8o4', 2)">
                                     <p>All of the above</p>
                                 </li>
                             </ul>
@@ -382,10 +376,10 @@
                         9. Which analysis can be useful in answering “What and When to Buy or Sell”?*
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q9o1', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q9o1', 2)">
                                     <p>Fundamental Analysis</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q9o2', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q9o2', 2)">
                                     <p>Technical Analysis</p>
                                 </li>
                             </ul>
@@ -395,16 +389,16 @@
                         10. ______ approach begins as the specific and moves to the general.
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q0o1', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q0o1', 2)">
                                     <p>Top - Down Approach</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q0o2', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q0o2', 2)">
                                     <p>Bottom – Up Approach</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q0o3', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q0o3', 2)">
                                     <p>None of the above</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q0o4', 2)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q0o4', 2)">
                                     <p>All of the above</p>
                                 </li>
                             </ul>
@@ -418,16 +412,16 @@
                         1. Which of the following names is NOT associated with the income statement?
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q1o1', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q1o1', 3)">
                                     <p>Profit and Losses</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q1o2', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q1o2', 3)">
                                     <p>Revenue</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q1o3', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q1o3', 3)">
                                     <p>Expenditures</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q1o4', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q1o4', 3)">
                                     <p>Tangible assets</p>
                                 </li>
                             </ul>
@@ -437,16 +431,16 @@
                         2. The purpose of an income statement is to show a company’s _________ over a period
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q2o1', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q2o1', 3)">
                                     <p>Net worth</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q2o2', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q2o2', 3)">
                                     <p>Cash flows</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q2o3', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q2o3', 3)">
                                     <p>Financial performance</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q2o4', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q2o4', 3)">
                                     <p>Ability to pay liabilities</p>
                                 </li>
                             </ul>
@@ -456,16 +450,16 @@
                         3. if you want to study long term solvency of a company what will you look for
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q3o1', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q3o1', 3)">
                                     <p>Current Ratio</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q3o2', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q3o2', 3)">
                                     <p>Working Capital Ratio</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q3o3', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q3o3', 3)">
                                     <p>Debt Equity Ratio</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q3o4', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q3o4', 3)">
                                     <p>Earning per share</p>
                                 </li>
                             </ul>
@@ -475,16 +469,16 @@
                         4. if a company’s earning is improving year on year and having a high leverage in its capital structure , what does it mean ?
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important;" onclick="optionchosen('q4o1', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important;" onclick="optionchosen('q4o1', 3)">
                                     <p>Firm is trading on equity</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important;" onclick="optionchosen('q4o2', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important;" onclick="optionchosen('q4o2', 3)">
                                     <p>The firm has not any alternative except borrowings</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important;" onclick="optionchosen('q4o3', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important;" onclick="optionchosen('q4o3', 3)">
                                     <p>Firm is not aware of its capital structure</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important;" onclick="optionchosen('q4o4', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important;" onclick="optionchosen('q4o4', 3)">
                                     <p>Firm does not have an efficient financial management</p>
                                 </li>
                             </ul>
@@ -494,16 +488,16 @@
                         5. Which ratio tells about Ability of a company to pay the interest on its outstanding debt
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q5o1', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q5o1', 3)">
                                     <p>Current Ratio</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q5o2', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q5o2', 3)">
                                     <p>Working Capital Ratio</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q5o3', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q5o3', 3)">
                                     <p>Debt Equity Ratio</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q5o4', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q5o4', 3)">
                                     <p>Interest coverage ratio</p>
                                 </li>
                             </ul>
@@ -513,16 +507,16 @@
                         6. Which ratio tells about how good the company is in generating returns on the investment it received from its shareholders.
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q6o1', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q6o1', 3)">
                                     <p>Return on capital employed</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q6o2', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q6o2', 3)">
                                     <p>Price earning ratio</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q6o3', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q6o3', 3)">
                                     <p>Return on Equity</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q6o4', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q6o4', 3)">
                                     <p>Return on assets</p>
                                 </li>
                             </ul>
@@ -532,16 +526,16 @@
                         7. Which ratio helps to find out whether they are overvalued or undervalued.
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q7o1', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q7o1', 3)">
                                     <p>Return on Investment</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q7o2', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q7o2', 3)">
                                     <p>Price earning ratio</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q7o3', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q7o3', 3)">
                                     <p>Gross profit ratio</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q7o4', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q7o4', 3)">
                                     <p>Net profit ratio</p>
                                 </li>
                             </ul>
@@ -551,16 +545,16 @@
                         8. The only trusted document for all numbers :
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important;" onclick="optionchosen('q8o1', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important;" onclick="optionchosen('q8o1', 3)">
                                     <p>Information available on Internet</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important;" onclick="optionchosen('q8o2', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important;" onclick="optionchosen('q8o2', 3)">
                                     <p>Annual reports of the company</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important;" onclick="optionchosen('q8o3', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important;" onclick="optionchosen('q8o3', 3)">
                                     <p>Websites other than company’s official website</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important;" onclick="optionchosen('q8o4', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important;" onclick="optionchosen('q8o4', 3)">
                                     <p>Other sources</p>
                                 </li>
                             </ul>
@@ -570,10 +564,10 @@
                         9. Is there any benefit to diversify someone’s investment instead of investing all in one instrument ?
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important;" onclick="optionchosen('q9o1', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important;" onclick="optionchosen('q9o1', 3)">
                                     <p>Yes , it will help to hedge risks</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important; max-height: 100px !important;" onclick="optionchosen('q9o2', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important; max-height: 100px !important;" onclick="optionchosen('q9o2', 3)">
                                     <p>No, we should invest only in highly volatile security
                                         so that we can generate high return</p>
                                 </li>
@@ -585,10 +579,10 @@
                         capacity and his objective of investment ?
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important; max-height: 100px !important;" onclick="optionchosen('q0o1', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important; max-height: 100px !important;" onclick="optionchosen('q0o1', 3)">
                                     <p>Yes , it will help to plan investment as per the client requirements</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important; max-height: 100px !important;" onclick="optionchosen('q0o2', 3)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important; max-height: 100px !important;" onclick="optionchosen('q0o2', 3)">
                                     <p>No, investment advisor need not to know this at all.</p>
                                 </li>
                             </ul>
@@ -602,16 +596,16 @@
                         1. Mutual fund is a ___________ investment option
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 300px !important;" onclick="optionchosen('q1o1', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 300px !important;" onclick="optionchosen('q1o1', 4)">
                                     <p>Diversified investment</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 300px !important;" onclick="optionchosen('q1o2', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 300px !important;" onclick="optionchosen('q1o2', 4)">
                                     <p>Fixed income</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 300px !important;" onclick="optionchosen('q1o3', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 300px !important;" onclick="optionchosen('q1o3', 4)">
                                     <p>High return</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 300px !important;" onclick="optionchosen('q1o4', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 300px !important;" onclick="optionchosen('q1o4', 4)">
                                     <p>Low return</p>
                                 </li>
                             </ul>
@@ -621,17 +615,17 @@
                         2. Expense ratio is
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important; max-height: 100px !important;" onclick="optionchosen('q2o1', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important; max-height: 100px !important;" onclick="optionchosen('q2o1', 4)">
                                     <p>Total percentage of fund used for administrative,
                                         management, advertising, and all other expenses</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important; max-height: 100px !important;" onclick="optionchosen('q2o2', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important; max-height: 100px !important;" onclick="optionchosen('q2o2', 4)">
                                     <p>Expense done by investor to open an account with broker</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important;" onclick="optionchosen('q2o3', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important;" onclick="optionchosen('q2o3', 4)">
                                     <p>A tax which an investor has to pay on his earnings.</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important;" onclick="optionchosen('q2o4', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important;" onclick="optionchosen('q2o4', 4)">
                                     <p>None of the above</p>
                                 </li>
                             </ul>
@@ -641,16 +635,16 @@
                         3. Which of the following is NOT a reason to invest in mutual funds?
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important" onclick="optionchosen('q3o1', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important" onclick="optionchosen('q3o1', 4)">
                                     <p>Professional management of your investment</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important; max-height: 100px !important;" onclick="optionchosen('q3o2', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important; max-height: 100px !important;" onclick="optionchosen('q3o2', 4)">
                                     <p>Invest low amounts (as low as Rs. 500) in a diversified portfolio</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important; max-height: 100px !important;" onclick="optionchosen('q3o3', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important; max-height: 100px !important;" onclick="optionchosen('q3o3', 4)">
                                     <p>Flexibility to buy and sell your investments as and when you want</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important" onclick="optionchosen('q3o4', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important" onclick="optionchosen('q3o4', 4)">
                                     <p>Personal customized portfolio</p>
                                 </li>
                             </ul>
@@ -660,16 +654,16 @@
                         4. Which of the following instruments can mutual funds scheme invest in?
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q4o1', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q4o1', 4)">
                                     <p>stocks</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q4o2', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q4o2', 4)">
                                     <p>Gold</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q4o3', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q4o3', 4)">
                                     <p>Corporate bonds</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q4o4', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q4o4', 4)">
                                     <p>All of the above</p>
                                 </li>
                             </ul>
@@ -679,16 +673,16 @@
                         5. A diversified equity fund is one which
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important;" onclick="optionchosen('q5o1', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important;" onclick="optionchosen('q5o1', 4)">
                                     <p>Invests in one sector</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important;" onclick="optionchosen('q5o2', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important;" onclick="optionchosen('q5o2', 4)">
                                     <p>Invests in one theme</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important;" onclick="optionchosen('q5o3', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important;" onclick="optionchosen('q5o3', 4)">
                                     <p>Invests in stocks across various sectors</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important;" onclick="optionchosen('q5o4', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important;" onclick="optionchosen('q5o4', 4)">
                                     <p>Invests in minimum 30 stocks</p>
                                 </li>
                             </ul>
@@ -698,16 +692,16 @@
                         6. What is an open-ended fund?
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important; max-height: 100px !important;" onclick="optionchosen('q6o1', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important; max-height: 100px !important;" onclick="optionchosen('q6o1', 4)">
                                     <p>It is a fund that buys and sells units on a continuous basis.</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important; max-height: 100px !important;" onclick="optionchosen('q6o2', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important; max-height: 100px !important;" onclick="optionchosen('q6o2', 4)">
                                     <p>The fund’s returns closely track the returns of a benchmark index.</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important; max-height: 100px !important;" onclick="optionchosen('q6o3', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important; max-height: 100px !important;" onclick="optionchosen('q6o3', 4)">
                                     <p>It is a fund that offers sale of units or redemption of units at periodic intervals.</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 400px !important;" onclick="optionchosen('q6o4', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 400px !important;" onclick="optionchosen('q6o4', 4)">
                                     <p>None of the above</p>
                                 </li>
                             </ul>
@@ -717,16 +711,16 @@
                         7. Which of the following is permitted to invest in mutual funds in India?
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q7o1', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q7o1', 4)">
                                     <p>Individuals</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q7o2', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q7o2', 4)">
                                     <p>HUF</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q7o3', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q7o3', 4)">
                                     <p>Qualified Foreign Investors</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q7o4', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q7o4', 4)">
                                     <p>All the above</p>
                                 </li>
                             </ul>
@@ -736,16 +730,16 @@
                         8. Mutual funds are regulated by?
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px; max-height: 100px !important;" onclick="optionchosen('q8o1', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px; max-height: 100px !important;" onclick="optionchosen('q8o1', 4)">
                                     <p>Securities & Exchange Board of India</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q8o2', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q8o2', 4)">
                                     <p>Reserve Bank of India</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q8o3', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q8o3', 4)">
                                     <p>Pension fund Authority</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px; max-height: 100px !important;" onclick="optionchosen('q8o4', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px; max-height: 100px !important;" onclick="optionchosen('q8o4', 4)">
                                     <p>Mutual Fund association of India</p>
                                 </li>
                             </ul>
@@ -756,16 +750,16 @@
                         company may fail and be unable to give back the promised amount.
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q9o1', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q9o1', 4)">
                                     <p>Credit Risk</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q9o2', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q9o2', 4)">
                                     <p>Market Risk</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q9o3', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q9o3', 4)">
                                     <p>Economy Risk</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q9o4', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q9o4', 4)">
                                     <p>None of the above</p>
                                 </li>
                             </ul>
@@ -775,16 +769,16 @@
                         10. What is the full form of NAV?
                         <div id="options" class="mt-3" >
                             <ul class="list-group">
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q0o1', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q0o1', 4)">
                                     <p>Net Annual Value</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q0o2', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q0o2', 4)">
                                     <p>Net Actual Value</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q0o3', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q0o3', 4)">
                                     <p>Net Asset Value</p>
                                 </li>
-                                <li class="list-group-item option_Style text-white" style="max-width: 200px;" onclick="optionchosen('q0o4', 4)">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen('q0o4', 4)">
                                     <p>New asset Value</p>
                                 </li>
                             </ul>

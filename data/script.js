@@ -5,35 +5,69 @@ var correct_Answers = [["q1o1", "q2o4", "q3o2", "q4o2", "q5o3", "q6o4","q7o4","q
 
 
 var markedCorrect = 0;
+var marked = 0;
 var red = [];
 var green = [];
+var quizNumber = 0;
 
 function optionchosen(option, n){
+    document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].children[option[3]-1].onclick = null;
+    marked++;
+    let options = document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].childElementCount
     for(var i in correct_Answers[n-1]){
         if(option == correct_Answers[n-1][i]){
             document.getElementById("q"+n+"q"+option[1]).style.backgroundColor = "#bcf5bc";
-            green.push("q"+n+"q"+option[1]);
+            //console.log(document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].childElementCount)
+            for(let j = 0; j < options; j++){
+                document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].children[j].onclick = null;
+                document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].children[j].classList.remove("hov");
+            }
+            //green.push("q"+n+"q"+option[1]);
             markedCorrect++;
-            if(markedCorrect === 10)
-            {
-                document.getElementById("modalBody").innerHTML = "Congratulations, Quiz " + n + " completed !!!"
+            if(marked%10 == 0 && quizNumber != 3){
+                quizNumber++;
+                document.getElementById("modalBody").innerHTML = "Congratulations, Quiz "+quizNumber+" completed. continue to next quiz";
+                //document.getElementById("quizButton"+quizNumber).disabled = true;
+                $('#Modal1').modal('toggle')
+                setTimeout(()=>{$('#Modal1').modal('toggle')},1000)
+
+            }
+            if(marked == 40){
+                document.getElementById("modalBody").innerHTML = "Congratulations, Quiz completed !!! "+markedCorrect+" correct";
                 $('#Modal1').modal('toggle')
                 setTimeout(()=>{$('#Modal1').modal('toggle')},2000)
             }
             return 1;
         }
     }
+    for(let j = 0; j < options; j++){
+        document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].children[j].onclick = null;
+        document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].children[j].classList.remove("hov");
+    }
     document.getElementById("q"+n+"q"+option[1]).style.backgroundColor = "#ee9090";
-    red.push("q"+n+"q"+option[1]);
+    if(marked%10 == 0){
+        quizNumber++;
+        document.getElementById("modalBody").innerHTML = "Congratulations, Quiz "+quizNumber+" completed. continue to next quiz";
+        //document.getElementById("quizButton"+quizNumber).disabled = true;
+        $('#Modal1').modal('toggle')
+        setTimeout(()=>{$('#Modal1').modal('toggle')},1000)
+
+    }
+    if(marked == 40){
+        document.getElementById("modalBody").innerHTML = "Congratulations, Quiz completed !!! "+markedCorrect+" correct";
+        $('#Modal1').modal('toggle')
+        setTimeout(()=>{$('#Modal1').modal('toggle')},2000)
+    }
 }
 
 function startQuiz(n){
-    for(var i in red){
-        document.getElementById(red[i]).style.backgroundColor = "#FFFFFF";
-    }
-    for(var i in green){
-        document.getElementById(green[i]).style.backgroundColor = "#FFFFFF";
-    }
+    // for(var i in red){
+    //     document.getElementById(red[i]).style.backgroundColor = "#FFFFFF";
+    // }
+    // for(var i in green){
+    //     document.getElementById(green[i]).style.backgroundColor = "#FFFFFF";
+    // }
+    //document.getElementById("quizButton"+n).disabled = true;
     if(n == 1){
         document.getElementById("quiz1").style.display = "block";
         document.getElementById("quiz2").style.display = "none";
@@ -54,5 +88,4 @@ function startQuiz(n){
         document.getElementById("quiz2").style.display = "none";
         document.getElementById("quiz3").style.display = "none";
         document.getElementById("quiz4").style.display = "block";}
-    markedCorrect = 0;
 }
