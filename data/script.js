@@ -9,7 +9,6 @@ var correct_Answers = [
 var markedCorrect = 0;
 var marked = [0,0,0,0];
 var quizCompleted = 0;
-var temp = [0,0,0,0];
 
 function optionchosen(option, n){
     document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].children[option[3]-1].onclick = null;
@@ -24,6 +23,8 @@ function optionchosen(option, n){
                 document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].children[j].classList.remove("hov");
             }
             markedCorrect++;
+            console.log(markedCorrect);
+            console.log(marked[0]+marked[1]+marked[2]+marked[3]);
             if(marked[0]+marked[1]+marked[2]+marked[3] == 40){
                 document.getElementById("quizButton"+n).classList.remove("btn-outline-success");
                 document.getElementById("quizButton"+n).classList.remove("btn-warning");
@@ -31,11 +32,11 @@ function optionchosen(option, n){
                 if(markedCorrect <= 15){
                     document.getElementById("modalBody").innerHTML = "<h5>Congratulations, Quiz completed !!!</h5>"+ "<h4>Your performance was<strong> Below Average</strong></h4>";
                 }
-                else if(16 <= markedCorrect <= 25)
+                else if(16 <= markedCorrect && markedCorrect <= 25)
                 {
                     document.getElementById("modalBody").innerHTML = "<h5>Congratulations, Quiz completed !!!</h5>"+ "<h4>Your performance was<strong> Average</strong></h4>";
                 }
-                else{
+                else if(26 <= markedCorrect && markedCorrect <= 40){
                     document.getElementById("modalBody").innerHTML = "<h5>Congratulations, Quiz completed !!!</h5>"+ "<h4>Your performance was<strong> Above Average</strong></h4>";
                 }
                 document.getElementById("cancel").innerHTML = "Close";
@@ -71,11 +72,11 @@ function optionchosen(option, n){
         if(markedCorrect <= 15){
             document.getElementById("modalBody").innerHTML = "<h5>Congratulations, Quiz completed !!!</h5>"+ "<h4>Your performance was<strong> Below Average</strong></h4>";
         }
-        else if(16 <= markedCorrect <= 25)
+        else if(16 <= markedCorrect && markedCorrect <= 25)
         {
             document.getElementById("modalBody").innerHTML = "<h5>Congratulations, Quiz completed !!!</h5>"+ "<h4>Your performance was<strong> Average</strong></h4>";
         }
-        else{
+        else if(26 <= markedCorrect && markedCorrect <= 40){
             document.getElementById("modalBody").innerHTML = "<h5>Congratulations, Quiz completed !!!</h5>"+ "<h4>Your performance was<strong> Above Average</strong></h4>";
         }
         document.getElementById("cancel").innerHTML = "Close";
@@ -99,7 +100,6 @@ function optionchosen(option, n){
 }
 
 function startQuiz(nm){
-    temp[nm-1] = marked[nm-1];
     for(var i = 1; i<5; i++){
         if(i == nm)
         {
