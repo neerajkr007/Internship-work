@@ -3,7 +3,7 @@
     background-color: #444444;
 }
 
-body {
+.no_scroll {
   overflow-x: hidden;
 }
 

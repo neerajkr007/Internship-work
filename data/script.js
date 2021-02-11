@@ -7,13 +7,14 @@ var correct_Answers = [
 
 
 var markedCorrect = 0;
-var marked = 0;
-var quizNumber = 0;
+var marked = [0,0,0,0];
+var quizCompleted = 0;
+var temp = [0,0,0,0];
 
 function optionchosen(option, n){
     document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].children[option[3]-1].onclick = null;
     document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].children[option[3]-1].style.backgroundColor = "#444444";
-    marked++;
+    marked[n-1]++;
     let options = document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].childElementCount
     for(var i in correct_Answers[n-1]){
         if(option == correct_Answers[n-1][i]){
@@ -23,16 +24,10 @@ function optionchosen(option, n){
                 document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].children[j].classList.remove("hov");
             }
             markedCorrect++;
-            if(marked%10 == 0 && quizNumber != 3){
-                quizNumber++;
-                document.getElementById("modalBody").innerHTML = "<h4>Congratulations, Quiz "+quizNumber+" completed. continue to next quiz</h4>";
-                document.getElementById("cancel").innerHTML = "Next";
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-                $('#Modal1').modal('toggle')
-
-            }
-            if(marked == 40){
+            if(marked[0]+marked[1]+marked[2]+marked[3] == 40){
+                document.getElementById("quizButton"+n).classList.remove("btn-outline-success");
+                document.getElementById("quizButton"+n).classList.remove("btn-warning");
+                document.getElementById("quizButton"+n).classList.add("btn-success");
                 if(markedCorrect <= 15){
                     document.getElementById("modalBody").innerHTML = "<h5>Congratulations, Quiz completed !!!</h5>"+ "<h4>Your performance was<strong> Below Average</strong></h4>";
                 }
@@ -46,6 +41,21 @@ function optionchosen(option, n){
                 document.getElementById("cancel").innerHTML = "Close";
                 $('#Modal1').modal('toggle')
             }
+            if(marked[n-1] == 10 && quizCompleted != 3){
+                quizCompleted++;
+                document.getElementById("quizButton"+n).classList.remove("btn-outline-success");
+                document.getElementById("quizButton"+n).classList.remove("btn-warning");
+                document.getElementById("quizButton"+n).classList.add("btn-success");
+                document.getElementById("modalBody").innerHTML = "<h4>Congratulations, Quiz "+n+" completed. continue to another quiz</h4>";
+                document.getElementById("cancel").innerHTML = "Next";
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+                $('#Modal1').modal('toggle')
+            }
+            else if(marked[n-1] == 1){
+                document.getElementById("quizButton"+n).classList.remove("btn-outline-success");
+                document.getElementById("quizButton"+n).classList.add("btn-warning");
+            }
             return 1;
         }
     }
@@ -54,16 +64,10 @@ function optionchosen(option, n){
         document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].children[j].classList.remove("hov");
     }
     document.getElementById("q"+n+"q"+option[1]).style.backgroundColor = "#ee9090";
-    if(marked%10 == 0 && quizNumber != 3){
-        quizNumber++;
-        document.getElementById("modalBody").innerHTML = "<h4>Congratulations, Quiz "+quizNumber+" completed. continue to next quiz</h4>";
-        document.getElementById("cancel").innerHTML = "Next";
-        document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-        $('#Modal1').modal('toggle')
-
-    }
-    if(marked == 40){
+    if(marked[0]+marked[1]+marked[2]+marked[3] == 40){
+        document.getElementById("quizButton"+n).classList.remove("btn-outline-success");
+        document.getElementById("quizButton"+n).classList.remove("btn-warning");
+        document.getElementById("quizButton"+n).classList.add("btn-success");
         if(markedCorrect <= 15){
             document.getElementById("modalBody").innerHTML = "<h5>Congratulations, Quiz completed !!!</h5>"+ "<h4>Your performance was<strong> Below Average</strong></h4>";
         }
@@ -77,27 +81,32 @@ function optionchosen(option, n){
         document.getElementById("cancel").innerHTML = "Close";
         $('#Modal1').modal('toggle')
     }
+    if(marked[n-1] == 10 && quizCompleted != 3){
+        quizCompleted++;
+        document.getElementById("quizButton"+n).classList.remove("btn-outline-success");
+        document.getElementById("quizButton"+n).classList.remove("btn-warning");
+        document.getElementById("quizButton"+n).classList.add("btn-success");
+        document.getElementById("modalBody").innerHTML = "<h4>Congratulations, Quiz "+n+" completed. continue to another quiz</h4>";
+        document.getElementById("cancel").innerHTML = "Next";
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        $('#Modal1').modal('toggle')
+    }
+    else if(marked[n-1] == 1){
+        document.getElementById("quizButton"+n).classList.remove("btn-outline-success");
+        document.getElementById("quizButton"+n).classList.add("btn-warning");
+    }
 }
 
-function startQuiz(n){
-    if(n == 1){
-        document.getElementById("quiz1").style.display = "block";
-        document.getElementById("quiz2").style.display = "none";
-        document.getElementById("quiz3").style.display = "none";
-        document.getElementById("quiz4").style.display = "none";}
-    else if(n == 2){
-        document.getElementById("quiz1").style.display = "none";
-        document.getElementById("quiz2").style.display = "block";
-        document.getElementById("quiz3").style.display = "none";
-        document.getElementById("quiz4").style.display = "none";}
-    else if(n == 3){
-        document.getElementById("quiz1").style.display = "none";
-        document.getElementById("quiz2").style.display = "none";
-        document.getElementById("quiz3").style.display = "block";
-        document.getElementById("quiz4").style.display = "none";}
-    else{
-        document.getElementById("quiz1").style.display = "none";
-        document.getElementById("quiz2").style.display = "none";
-        document.getElementById("quiz3").style.display = "none";
-        document.getElementById("quiz4").style.display = "block";}
+function startQuiz(nm){
+    temp[nm-1] = marked[nm-1];
+    for(var i = 1; i<5; i++){
+        if(i == nm)
+        {
+            document.getElementById("quiz"+nm).style.display = "block";
+        }
+        else{
+            document.getElementById("quiz"+i).style.display = "none";
+        }
+    }
 }
