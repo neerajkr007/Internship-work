@@ -23,8 +23,6 @@ function optionchosen(option, n){
                 document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].children[j].classList.remove("hov");
             }
             markedCorrect++;
-            console.log(markedCorrect);
-            console.log(marked[0]+marked[1]+marked[2]+marked[3]);
             if(marked[0]+marked[1]+marked[2]+marked[3] == 40){
                 document.getElementById("quizButton"+n).classList.remove("btn-outline-success");
                 document.getElementById("quizButton"+n).classList.remove("btn-warning");
