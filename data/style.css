@@ -30,7 +30,7 @@ input::-webkit-inner-spin-button {
   }
 .option_Style{
     max-width: 250px !important; 
-    background-color: grey !important;
+    background-color: grey;
     max-height: 50px;
 }
 
