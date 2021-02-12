@@ -247,7 +247,7 @@ function personality()
             }
         }
     }
-    if(test){
+    if(!test){
         document.getElementById("personality_quiz_submit").disabled = true;
         document.getElementById("modalTitle").innerHTML = "Result";
         document.getElementById("modalBody").innerHTML = '<div class="d-flex align-items-center"><strong>Please wait while we calculate your result...</strong><div class="spinner-border ml-auto" role="status" aria-hidden="true"></div></div>';
