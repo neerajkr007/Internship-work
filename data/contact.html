@@ -8,17 +8,20 @@
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
-    <div id="content" style="min-height: 83.8vh;">
-        <nav class="navbar navbar-expand-md navbar-light mb-10" style='background-color: #0099CC;'>
+    <div id="content" cla style="min-height: 83.8vh;">
+        <nav class="navbar navbar-expand-md navbar-light mb-10" style='background-color: #0099CC; padding-bottom: 0; margin-bottom: 0;padding-top: 0; margin-top: 0;'>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link active" href="../index.html"><img src="./logo.png" width="150px" height="45px" alt="" ></a>
+            </li>
+          </ul>
             <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
       
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                <a class="nav-link active" href="../index.html"><img src="./logo.png" width="70px" height="54px" alt="" ></a>
-                </li>
+
               </ul>
               <ul class="nav nav-bar navbar-right">
                   <li class="nav-item active">
@@ -42,7 +45,7 @@
               
             </div>
         </nav>
-        <div id="contact_us_form">
+        <div id="contact_us_form" class="mt-10">
               <div class="row mt-6" style="max-width: 99vw;">
                   <div class="col-md-4">
                       <h1 class="display-4 text-center">Contact Us</h1>
@@ -50,7 +53,8 @@
                           <img src="./contact_us.jpg" style="max-width: 400px; max-height: 400px;">
                       </div>
                   </div>
-                  <div class="col-md-4 offset-md-3 justify-content-center" style="padding-right: 0;">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-4 ml-5" style="padding-right: 0;">
                       <form>
                           <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
