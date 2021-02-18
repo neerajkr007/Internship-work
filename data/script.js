@@ -3,6 +3,7 @@ var correct_Answers = [
                       ,["q1o3", "q2o1", "q3o3", "q4o3", "q5o1", "q6o2","q7o1","q8o4", "q9o2", "q0o2"]
                       ,["q1o4", "q2o3", "q3o3", "q4o1", "q5o4", "q6o3","q7o2","q8o2", "q9o1", "q0o1"]
                       ,["q1o1", "q2o1", "q3o4", "q4o4", "q5o3", "q6o1","q7o4","q8o1", "q9o1", "q0o3"]
+                      ,["q1o3"]
                       ];
 
 
@@ -20,12 +21,14 @@ for(let i = 0; i < 34; i++){
     submision[i] = new Array(1);
     submision[i][0] = -1;
 }
-var type = [[1,1,1,1,1,0,0,0,1,0,1,0,1,1,-2,0,-2,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0],
+var type = [
+            [1,1,1,1,1,0,0,0,1,0,1,0,1,1,-2,0,-2,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0],
             [0,0,0,0,0,1,1,1,0,1,0,1,0,0,1,1,0,0,1,1,1,-2,1,1,1,1,1,0,1,1,0,1,1,1],
-            [1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,0,0,1,1,0,1,1,1,1,1,0,0,0,0,1,0,0,0,0]];
+            [1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,0,0,1,1,0,1,1,1,1,1,0,0,0,0,1,0,0,0,0]
+           ];
 var similar = [0,0,0];
 
-
+var quiz6ans = [3, 1, 1, 3, 3, 1, 3]
 
 function optionchosen(option, n){
     current_quiz = n;
@@ -33,13 +36,13 @@ function optionchosen(option, n){
     document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].children[option[3]-1].style.backgroundColor = "#444444";
     marked[n-1]++;
     let options = document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].childElementCount
+    for(let j = 0; j < options; j++){
+        document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].children[j].onclick = null;
+        document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].children[j].classList.remove("hov");
+    }
     for(var i in correct_Answers[n-1]){
         if(option == correct_Answers[n-1][i]){
             document.getElementById("q"+n+"q"+option[1]).style.backgroundColor = "#bcf5bc";//console.log(document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].childElementCount)
-            for(let j = 0; j < options; j++){
-                document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].children[j].onclick = null;
-                document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].children[j].classList.remove("hov");
-            }
             markedCorrect++;
             if(marked[0]+marked[1]+marked[2]+marked[3] == 40){
                 document.getElementById("quizButton"+n).classList.remove("btn-outline-success");
@@ -78,10 +81,6 @@ function optionchosen(option, n){
             }
             return 1;
         }
-    }
-    for(let j = 0; j < options; j++){
-        document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].children[j].onclick = null;
-        document.getElementById("q"+n+"q"+option[1]).childNodes[1].childNodes[1].children[j].classList.remove("hov");
     }
     document.getElementById("q"+n+"q"+option[1]).style.backgroundColor = "#ee9090";
     if(marked[0]+marked[1]+marked[2]+marked[3] == 40){
@@ -123,7 +122,7 @@ function optionchosen(option, n){
 
 function startQuiz(nm){
     if(!completed[nm-1]){
-        for(var i = 1; i<5; i++){
+        for(var i = 1; i<7; i++){
             if(i == nm)
             {
                 document.getElementById("quiz"+nm).style.display = "block";
@@ -194,14 +193,15 @@ function enterQuestion(qid, question, option1, option2)
     _question.appendChild(li);
 }
 
-
-function testi(){
+function drawQuiz(){
+    document.getElementById("personality_quiz_submit").style.display = "flex";
     for(let i = 0; i < 34; i++){
         if(i<9)
             enterQuestion("q5q0"+(i+1), quiz5Questions[i], quiz5Options1[i], quiz5Options2[i]);
         else
             enterQuestion("q5q"+(i+1), quiz5Questions[i], quiz5Options1[i], quiz5Options2[i]);
     }
+    //document.getElementById("quizButton5").disabled = true;
 //     var submit = document.createElement('button');
 //     submit.setAttribute("class", "btn btn-success mt-3");
 //     submit.appendChild(document.createTextNode("Submit"));
@@ -209,11 +209,11 @@ function testi(){
 }
 
 
-function personality()
+function personality_result()
 {
-    let test = false;
     for(let i = 0; i < 34; i++)
     {
+        var test = false;
         if(i<9){
             if(document.getElementById("q5q0"+(i+1)).children[0].children[0].style.backgroundColor == "rgb(68, 68, 68)"){
                 submision[i][0] = 0;
@@ -254,18 +254,18 @@ function personality()
         //document.getElementById("cancel").onclick = "$('#Modal1').modal('toggle')";
         document.getElementById("cancel").style.display = "none";
         $('#Modal1').modal('toggle')
-        for(let i = 0; i < 3; i++)
-        {
-            for(let j = 0; j < 34; j++)
-            {
-                if(submision[j][0] == type[i][j]){
-                    console.log(i+" "+j+" "+submision[j][0])
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 34; j++) {
+                if (submision[j][0] == type[i][j]) {
+                    //console.log(i + " " + j + " " + submision[j][0])
                     similar[i]++;
                 }
             }
         }
-        console.log(similar)
-        if(similar[0] >= similar[1] && similar[0] >= similar[2]) {
+        if(similar[0]==0 && similar[1]==0 && similar[2]==0){
+            document.getElementById("modalBody").innerHTML = "please complete atleast one of the questions";
+        }
+        else if (similar[0] >= similar[1] && similar[0] >= similar[2]) {
             document.getElementById("modalBody").innerHTML = "You are a ADMINISTRATIVE Trader";
         }
         else if (similar[1] >= similar[0] && similar[1] >= similar[2]) {
@@ -275,7 +275,61 @@ function personality()
             document.getElementById("modalBody").innerHTML = "You are a FacilITATIVE Trader";
         }
         document.getElementById("cancel").style.display = "block";
-        //document.getElementById("cancel").onclick = "$('#Modal1').modal('toggle')";
+        document.getElementById("cancel").onclick = "$('#Modal1').modal('toggle');";
+        similar[0] = 0; 
+        similar[1] = 0; 
+        similar[2] = 0;
     }
-    
+}
+
+function optionchosen3(option, n){
+    if(option[1] == 1){
+        document.getElementById("q"+n+"q"+option[1]).children[0].children[0].children[option[3]-1].onclick = null;
+        document.getElementById("q"+n+"q"+option[1]).children[0].children[0].children[option[3]-1].style.backgroundColor = "#444444";
+        let options = document.getElementById("q"+n+"q"+option[1]).children[0].children[0].children.length
+        for(let j = 0; j < options; j++){
+            document.getElementById("q"+n+"q"+option[1]).children[0].children[0].children[j].onclick = null;
+            document.getElementById("q"+n+"q"+option[1]).children[0].children[0].children[j].classList.remove("hov");
+        }
+        if(option == "q1o3"){
+            document.getElementById("q"+n+"q"+option[1]).style.backgroundColor = "#bcf5bc";
+        }
+        else{
+            document.getElementById("q"+n+"q"+option[1]).style.backgroundColor = "#ee9090";
+        }
+    }
+    else{
+        document.getElementById("q"+n+"q"+option[1]).children[2].children[0].children[option[3]-1].onclick = null;
+        document.getElementById("q"+n+"q"+option[1]).children[2].children[0].children[option[3]-1].style.backgroundColor = "#444444";
+        let options = document.getElementById("q"+n+"q"+option[1]).children[2].children[0].children.length
+        for(let j = 0; j < options; j++){
+            document.getElementById("q"+n+"q"+option[1]).children[2].children[0].children[j].onclick = null;
+            document.getElementById("q"+n+"q"+option[1]).children[2].children[0].children[j].classList.remove("hov");
+        }
+        document.getElementById("Modal2").classList.add("modal-lg");
+        $('#Modal1').modal('toggle')
+        setTimeout(()=>{
+            if(option[3] == quiz6ans[option[1]-1])
+            {
+                document.getElementById("result").innerHTML = "Yay, Correct Answer."+"<br>"+" correct answer :";
+                var correctAns = document.getElementById("correctAnsImage")
+                correctAns.setAttribute("src", "./quizGraphs/g"+(option[1]-1)+"a.png");
+                let maxwidth = document.getElementsByClassName("modal-body")[0].getBoundingClientRect().width;
+                //console.log(maxwidth)
+                correctAns.setAttribute("style", "width: "+(maxwidth*95/100)+"px !important")
+                document.getElementById("q"+n+"q"+option[1]).style.backgroundColor = "#bcf5bc";
+            }
+            else
+            {
+                document.getElementById("result").innerHTML = "oops, Wrong Answer."+"<br>"+" correct answer :";
+                var correctAns = document.getElementById("correctAnsImage")
+                correctAns.setAttribute("src", "./quizGraphs/g"+(option[1]-1)+"a.png");
+                let maxwidth = document.getElementsByClassName("modal-body")[0].getBoundingClientRect().width;
+                //console.log(maxwidth)
+                correctAns.setAttribute("style", "width: "+(maxwidth*95/100)+"px !important")
+                document.getElementById("q"+n+"q"+option[1]).style.backgroundColor = "#ee9090";
+            }
+        },150);
+        document.getElementById("cancel").onclick = "$('#Modal1').modal('toggle')";
+    }   
 }

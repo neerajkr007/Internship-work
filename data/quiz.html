@@ -45,7 +45,9 @@
             <button id="quizButton1" class="btn btn-outline-success mt-5 mr-5 mb-5" onClick="startQuiz(1)">QUIZ 1</button>
             <button id="quizButton2" class="btn btn-outline-success mt-5 mr-5 mb-5" onClick="startQuiz(2)">QUIZ 2</button>
             <button id="quizButton3" class="btn btn-outline-success mt-5 mr-5 mb-5" onClick="startQuiz(3)">QUIZ 3</button>
-            <button id="quizButton4" class="btn btn-outline-success mt-5 mb-5" onClick="startQuiz(4)">QUIZ 4</button>
+            <button id="quizButton4" class="btn btn-outline-success mt-5 mr-5 mb-5" onClick="startQuiz(4)">QUIZ 4</button>
+            <button id="quizButton6" class="btn btn-outline-success mt-5 mr-5 mb-5" onClick="startQuiz(6)">QUIZ 5</button>
+            <button id="quizButton5" class="btn btn-outline-success mt-5 mb-5" onClick="startQuiz(5)">Personality Quiz</button>
             <div id="quiz1" class="mt-5">
                 <ul class="list-group">
                     <li id="q1q1" class="list-group-item" style="max-width: 80vw;">
@@ -800,16 +802,143 @@
                 <ul id="personality_quiz" class="list-group">
 
                 </ul>
-                <div class="col-md-12 text-center">
-                    <button id="personality_quiz_submit" type="button" class="btn btn-success mt-5" onclick="personality()">Submit</button>
+                <div id="personality_quiz_submit" class="col-md-12 text-center">
+                    <button type="button" class="btn btn-success mt-5" onclick="personality_result()">Submit</button>
                 </div>
+            </div>
+            <div id="quiz6" class="mt-5">
+                <ul class="list-group">
+                    <li id="q6q1" class="list-group-item" style="max-width: 80vw;">
+                        1. The Relative Strength Index is considered a(n) _________ type indicator as it reacts in response to market rate changes.
+                        <div id="options" class="mt-3" >
+                            <ul class="list-group">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q1o1', 6)">
+                                    <p>Moving average 
+                                    </p>
+                                </li>
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q1o2', 6)">
+                                    <p>Volume </p>
+                                </li>
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q1o3', 6)">
+                                    <p>Oscillator  </p>
+                                </li>
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q1o4', 6)">
+                                    <p>Short Term</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list-group-item" style="max-width: 80vw;">
+                        <h3 class="display-4">Guidence : for the rest of the questions, Study the chart make 2 – week later prediction</h3>
+                    </li>
+                    <li id="q6q2" class="list-group-item" style="max-width: 80vw;">
+                        2. <br><img src="./quizGraphs/g1.png" style="max-width: 70vw;" >
+                        <div id="options" class="mt-3" >
+                            <ul class="list-group">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q2o1', 6)">
+                                    <p>Higher</p>
+                                </li>
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q2o2', 6)">
+                                    <p>Pass</p>
+                                </li>
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q2o3', 6)">
+                                    <p>lower</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="list-group">
+                    <li id="q6q3" class="list-group-item" style="max-width: 80vw;">
+                        3. <br><img src="./quizGraphs/g2.png" style="max-width: 70vw;" >
+                        <div id="options" class="mt-3" >
+                            <ul class="list-group">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q3o1', 6)">
+                                    <p>Higher</p>
+                                </li>
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q3o2', 6)">
+                                    <p>Pass</p>
+                                </li>
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q3o3', 6)">
+                                    <p>lower</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="q6q4" class="list-group-item" style="max-width: 80vw;">
+                        4. <br><img src="./quizGraphs/g3.png" style="max-width: 70vw;" >
+                        <div id="options" class="mt-3" >
+                            <ul class="list-group">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q4o1', 6)">
+                                    <p>Higher</p>
+                                </li>
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q4o2', 6)">
+                                    <p>Pass</p>
+                                </li>
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q4o3', 6)">
+                                    <p>lower</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="q6q5" class="list-group-item" style="max-width: 80vw;">
+                        5. <br><img src="./quizGraphs/g4.png" style="max-width: 70vw;" >
+                        <div id="options" class="mt-3" >
+                            <ul class="list-group">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q5o1', 6)">
+                                    <p>Higher</p>
+                                </li>
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q5o2', 6)">
+                                    <p>Pass</p>
+                                </li>
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q5o3', 6)">
+                                    <p>lower</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="q6q6" class="list-group-item" style="max-width: 80vw;">
+                        6. <br><img src="./quizGraphs/g5.png" style="max-width: 70vw;" >
+                        <div id="options" class="mt-3" >
+                            <ul class="list-group">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q6o1', 6)">
+                                    <p>Higher</p>
+                                </li>
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q6o2', 6)">
+                                    <p>Pass</p>
+                                </li>
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q6o3', 6)">
+                                    <p>lower</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="q6q7" class="list-group-item" style="max-width: 80vw;">
+                        7. <br><img src="./quizGraphs/g6.png" style="max-width: 70vw;">
+                        <div id="options" class="mt-3" >
+                            <ul class="list-group">
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q7o1', 6)">
+                                    <p>Higher</p>
+                                </li>
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q7o2', 6)">
+                                    <p>Pass</p>
+                                </li>
+                                <li class="list-group-item option_Style hov text-white" style="max-width: 200px;" onclick="optionchosen3('q7o3', 6)">
+                                    <p>lower</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
             </div>
             <script>
                 document.getElementById("quiz1").style.display = "none";
                 document.getElementById("quiz2").style.display = "none";
                 document.getElementById("quiz3").style.display = "none";
                 document.getElementById("quiz4").style.display = "none";
-                testi();
+                drawQuiz();
+                document.getElementById("quiz5").style.display = "none";
+                document.getElementById("quiz6").style.display = "none";
             </script>
         </div>
     </div>
@@ -828,8 +957,8 @@
 <div id="modal">
     <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
       aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
+      <div class="modal-dialog" id="Modal2" role="document">
+        <div class="modal-content" id="Modal3">
           <div class="modal-header">
             <h5 id="modalTitle" class="modal-title" id="ModalLabel3">Result</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -837,7 +966,11 @@
             </button>
           </div>
           <div class="modal-body">
-            <div id="modalBody"></div>
+            <div id="modalBody">
+                <h3 id="result" class="display-5"></h3>
+                <br>
+                <img id="correctAnsImage">
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" id="cancel" class="btn btn-success" onclick="startNextQuiz()" data-dismiss="modal">Close</button>
